@@ -45,6 +45,7 @@ public class LonelyTwitterActivity extends Activity {
 
 			}
 		});
+		/*
 		Tweet firsttweet;
         firsttweet = new Tweet(); // We have declared a tweet object
 		System.out.println("print message");
@@ -64,10 +65,11 @@ public class LonelyTwitterActivity extends Activity {
 		importantTweet fourthMessage = new importantTweet();
 		fourthMessage.setMessage("hello","world");
 		System.out.println(fourthMessage.getMessage());
-
-		Sad helpme;
-		helpme = new Sad();
-		System.out.println(helpme.getDate());
+	*/
+		Sad emotionTweet;
+		emotionTweet = new Sad();
+		System.out.println(emotionTweet.getDate());
+		System.out.println(emotionTweet.getMood());
 	}
 
 	@Override
