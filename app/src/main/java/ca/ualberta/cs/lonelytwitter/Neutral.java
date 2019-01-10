@@ -1,24 +1,19 @@
 package ca.ualberta.cs.lonelytwitter;
 
 public abstract class Neutral {
-    private String date;
+    public String date = "";
     public void Neutral(){
-        date = "";
-    }
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public void setDate() {
         this.date = "January 1 2019";
     }
-
+    public void Neutral(String Newdate) {this.date = Newdate;}
+    public String getDate() {
+        return this.date;
+    }
+    public void setDate(String Newdate) {
+        this.date = Newdate;
+    }
     public String getMood() {
-        return "Neutral";
+        return "Current emotion is Neutral";
     }
 
 }
