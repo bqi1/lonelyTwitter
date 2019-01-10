@@ -64,6 +64,10 @@ public class LonelyTwitterActivity extends Activity {
 		importantTweet fourthMessage = new importantTweet();
 		fourthMessage.setMessage("hello","world");
 		System.out.println(fourthMessage.getMessage());
+
+		Sad helpme = new Sad();
+		helpme.setDate();
+		System.out.println(helpme.getMood());
 	}
 
 	@Override
