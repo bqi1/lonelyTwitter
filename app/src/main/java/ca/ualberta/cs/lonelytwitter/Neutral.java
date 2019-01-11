@@ -1,9 +1,9 @@
 package ca.ualberta.cs.lonelytwitter;
 
 public abstract class Neutral {
-    public String date = "";
+    protected String date = "";
     public String getDate() {
-        return this.date;
+        return date;
     }
     public void setDate(String Newdate) {
         this.date = Newdate;
