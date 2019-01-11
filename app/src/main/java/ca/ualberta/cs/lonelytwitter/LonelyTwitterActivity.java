@@ -66,10 +66,17 @@ public class LonelyTwitterActivity extends Activity {
 		fourthMessage.setMessage("hello","world");
 		System.out.println(fourthMessage.getMessage());
 	*/
+		System.out.println("This is the Sad emotion");
 		Sad emotionTweet;
 		emotionTweet = new Sad();
 		System.out.println(emotionTweet.getDate());
 		System.out.println(emotionTweet.getMood());
+
+		System.out.println("This is the Happy emotion");
+		Happy emotionTweet2;
+		emotionTweet2 = new Happy("This is a new date");
+		System.out.println(emotionTweet2.getDate());
+		System.out.println(emotionTweet2.getMood());
 	}
 
 	@Override
