@@ -3,7 +3,7 @@ package ca.ualberta.cs.lonelytwitter;
 public abstract class Neutral {
     protected String date = "";
     public String getDate() {
-        return date;
+        return this.date;
     }
     public void setDate(String Newdate) {
         this.date = Newdate;
