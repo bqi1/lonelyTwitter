@@ -26,6 +26,18 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * @Author bqi1
+ * @Version 1.1
+ * @see 1.0
+ * @see Tweet2
+ * @see Tweet
+ * @see Happy
+ * @see Sad
+ * @see Neutral
+ * @see importantTweet
+ * @see Activity
+ */
 // Activity must implement onCreate
 public class LonelyTwitterActivity extends Activity {
 	private static final String FILENAME = "file.sav";
@@ -34,7 +46,10 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayList<Tweet2> tweetList = new ArrayList<Tweet2>(); // <type of object>
 	private ArrayAdapter<Tweet2> adapter;
 	
-	/** Called when the activity is first created. */
+	/** Called when the activity is first created.
+	 * Creates buttons (clear and save) , tweet list
+	 * @param savedInstanceState must be a Bundle Object
+	 * */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,8 +60,13 @@ public class LonelyTwitterActivity extends Activity {
 		Button clearButton = (Button) findViewById(R.id.clear);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
 
+
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
+			/**
+			 * reacts on what happens when save button is clicked
+			 * @param v must be a View object
+			 */
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
@@ -60,7 +80,11 @@ public class LonelyTwitterActivity extends Activity {
 			}
 		});
 		clearButton.setOnClickListener(new View.OnClickListener() {
-
+			/**
+			 * Reacts on what happens when clear button is clicked
+			 * Clears tweetlist
+			 * @param v must be a View object
+			 */
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				tweetList.clear();
@@ -107,6 +131,10 @@ public class LonelyTwitterActivity extends Activity {
 		*/
 	}
 
+	/**
+	 * Called when app starts
+	 * Creates ArrayAdapter for Tweet2 objects
+	 */
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
@@ -119,6 +147,10 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 * Loads from file, catches exceptions
+	 * Creates a list of tweets
+	 */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -136,7 +168,11 @@ public class LonelyTwitterActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * Writes tweets into tweetList
+	 * Catches any exceptions with IO or File finding
+	 */
 	private void saveInFile() {
 		try {
 			//FileOutputStream fos = openFileOutput(FILENAME,
